@@ -1,0 +1,100 @@
+<?php session_start(); ?>
+<script type="text/javascript">
+    function checkInput(form){
+        //驗證標題是否為空
+        if(form.subject.value == ''){
+            alert('標題不能為空！');
+            form.subject.focus();
+            return false;
+        }
+
+        //驗證输入内容是否為空
+        if(form.content.value == ''){
+            alert('請說點什麼！');
+            form.content.focus();
+            return false;
+        }
+
+        return true;
+    }
+</script>
+<?php
+include("conn.php");
+error_reporting(0);
+$time = date("Y:m:d H:i:s",time()+21600);
+$account = $_SESSION['account'];
+$_POST['account'] = $_SESSION['account'];
+if ($_SESSION['account'] != null) {
+    if (isset($_POST['button'])) {
+        if ("$_POST[account]" != "$account")
+        {echo "<font color=\"#ff0000\">帳號錯誤</font>";}
+        elseif ("$_POST[subject]" == null || "$_POST[content]" == null)
+        {echo "<font color=\"#ff0000\">欄位不能空白</font>";}
+        else {
+            $subject = htmlspecialchars($_POST[subject], ENT_NOQUOTES);
+            $content = htmlspecialchars($_POST[content], ENT_NOQUOTES);
+            $sql = "insert into bbs (id,account,subject,content,time,address) value('','$account','$subject','$content','$time','$_POST[address]')";
+            mysql_query($sql);
+            echo "發布成功";
+            echo '<meta http-equiv=REFRESH CONTENT=2;url=bbsmap.php>';
+        }
+    }
+}
+else
+{
+    echo "<center><font color=\"#ff0000\" size=\"20\">尚未登入</font></center>";
+
+}
+?>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>我要留言</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/global.css">
+</head>
+
+<body>
+<div class="container">
+    <div class="top">
+        <h3>新增留言</h3>
+    </div>
+    <form id="form1" name="form1" method="post" onsubmit="return checkInput(this);" class="form-horizontal">
+        <div class="form-group">
+            <label for="account" class="col-sm-4 control-label"></label>
+            <div class="col-sm-6">
+                <input type="hidden" class="form-control" placeholder="您的帳號" name="account" id="account" />
+            </div>
+        </div>
+        <div
+</div>
+<div class="form-group">
+    <label for="subject" class="col-sm-4 control-label">留言主旨：</label>
+    <div class="col-sm-6">
+        <input type="text" class="form-control" name="subject" id="subject"/>
+    </div>
+</div>
+<div class="form-group">
+    <label for="address" class="col-sm-4 control-label">所在地址：</label>
+    <div class="col-sm-6">
+        <input type="text" class="form-control" name="address" id="address"/>
+    </div>
+</div>
+<div class="form-group">
+    <label for="content" class="col-sm-4 control-label">留言內容：</label>
+    <div class="col-sm-6">
+        <textarea class="form-control" name="content" id="content" rows="5"></textarea>
+    </div>
+</div>
+<div class="button">
+    <input type="submit" name="button" id="button" value="送出" class="btn"/>
+</div>
+</form>
+
+
+</body>
+</html>
