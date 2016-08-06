@@ -1,29 +1,13 @@
-<?php session_start(); ?>
-<script type="text/javascript">
-    function checkInput(form){
-        //驗證標題是否為空
-        if(form.subject.value == ''){
-            alert('標題不能為空！');
-            form.subject.focus();
-            return false;
-        }
-
-        //驗證输入内容是否為空
-        if(form.content.value == ''){
-            alert('請說點什麼！');
-            form.content.focus();
-            return false;
-        }
-
-        return true;
-    }
-</script>
-<?php
+<?php session_start();
 include("conn.php");
 error_reporting(0);
+$sql = "select username from data";
+$result = mysql_query($sql);
+$row = mysql_fetch_row($result);
 $time = date("Y:m:d H:i:s",time()+21600);
 $account = $_SESSION['account'];
 $_POST['account'] = $_SESSION['account'];
+
 if ($_SESSION['account'] != null) {
     if (isset($_POST['button'])) {
         if ("$_POST[account]" != "$account")
@@ -43,7 +27,6 @@ if ($_SESSION['account'] != null) {
 else
 {
     echo "<center><font color=\"#ff0000\" size=\"20\">尚未登入</font></center>";
-
 }
 ?>
 
@@ -56,22 +39,42 @@ else
     <title>我要留言</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/bbs.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
 </head>
-
 <body>
+<div class="top">
+    <div class="menu">
+        <a href="bbs.php">留言板</a>
+        <a href="bbs_add.php">填寫留言</a>
+        <a href="login.php">會員登入</a>
+        <a href="member.php">會員資料</a>
+        <a href="logout.php">會員登出</a>
+    </div>
+    <div class="hello-name">
+        <?php
+
+        if ($_SESSION['account'] != null) {
+            echo $row[0]." 你好";
+        }
+        else
+        {
+            echo "";
+        }
+        ?>
+    </div>
+</div>
 <div class="container">
-    <div class="top">
+    <div class="top-word">
         <h3>新增留言</h3>
     </div>
     <form id="form1" name="form1" method="post" onsubmit="return checkInput(this);" class="form-horizontal">
         <div class="form-group">
             <label for="account" class="col-sm-4 control-label"></label>
             <div class="col-sm-6">
-                <input type="hidden" class="form-control" placeholder="您的帳號" name="account" id="account" />
+                <input type="hidden" class="form-control" name="account" id="account" />
             </div>
         </div>
-        <div
-</div>
 <div class="form-group">
     <label for="subject" class="col-sm-4 control-label">留言主旨：</label>
     <div class="col-sm-6">
@@ -95,6 +98,24 @@ else
 </div>
 </form>
 
+<script type="text/javascript">
+    function checkInput(form){
+        //驗證標題是否為空
+        if(form.subject.value == ''){
+            alert('標題不能為空！');
+            form.subject.focus();
+            return false;
+        }
 
+        //驗證输入内容是否為空
+        if(form.content.value == ''){
+            alert('請說點什麼！');
+            form.content.focus();
+            return false;
+        }
+
+        return true;
+    }
+</script>
 </body>
 </html>
