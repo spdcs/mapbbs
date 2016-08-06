@@ -68,10 +68,10 @@ $row = mysql_fetch_row($result);
                 var $this_Top = $this.scrollTop();
 
                 //當高度小於100時，關閉區塊
-                if ($this_Top < 50) {
+                if ($this_Top < 100) {
                     $(".top").removeClass("test");
                 }
-                if ($this_Top > 50) {
+                if ($this_Top > 100) {
                     $(".top").addClass("test");
                 }
             }).scroll();

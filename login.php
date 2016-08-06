@@ -51,15 +51,15 @@ $row = mysql_fetch_row($result);
         <h3>會員登入</h3>
     </div>
     <div class="login-from">
-        <form action="login_connect.php" method="post" name="login">
+        <form action="login_connect.php" method="post" name="login" >
             <table cellpadding="3" border="0">
                 <tr>
                     <td>帳號：</td>
-                    <td><input name="account" type="text" size="12"></td>
+                    <td><input class="form-control" name="account" type="text" size="12"></td>
                 </tr>
                 <tr>
                     <td>密碼：</td>
-                    <td><input name="password" type="password" size="12"></td>
+                    <td><input class="form-control" name="password" type="password" size="12"></td>
                 </tr>
             </table>
             <br>
