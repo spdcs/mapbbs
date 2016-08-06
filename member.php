@@ -48,6 +48,9 @@ error_reporting(0);
 <?php
 if ($_SESSION['account'] != null) {
 
+$account = $_SESSION['account'];
+$sql = "SELECT * FROM data where account = '$account'";
+$result = mysql_query($sql);
 ?>
 <table style="border:2px #cccccc solid;" cellpadding="3" border="0">
     <tr>

@@ -1,5 +1,4 @@
-<?php session_start(); ?>
-<?php
+<?php session_start();
 include("conn.php");
 $account = $_POST['account'];
 $password = $_POST['password'];

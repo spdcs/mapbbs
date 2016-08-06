@@ -42,7 +42,7 @@ $row = mysql_fetch_row($result);
     </div>
     <div class="login-from">
         <form action="login_connect.php" method="post" name="login" >
-            <table cellpadding="3" border="0">
+            <table cellpadding="2" border="0">
                 <tr>
                     <td>帳號：</td>
                     <td><input class="form-control" name="account" type="text" size="12"></td>
@@ -58,7 +58,6 @@ $row = mysql_fetch_row($result);
     </div>
 </div>
 
-<script src="js/jquery.js"></script>
 </body>
 </html>
 
