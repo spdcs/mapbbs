@@ -39,26 +39,24 @@ $row = mysql_fetch_row($result);
     <div class="hello-name">
         <?php
         if ($_SESSION['account'] != null) {
-            echo $row[1]." 你好";
-        }
-        else
-        {
+            echo $row[1] . " 你好";
+        } else {
             echo "";
         }
         ?>
     </div>
     <div class="comeback pull-right" id="_top">
-        <a href="#">top</a>
+        <a href="">top</a>
     </div>
 </div>
 <div class="container a">
     <?php while ($row = mysql_fetch_row($result)): ?>
-        <br>第<?=$row[0]?>位訪客
-        <br>訪客姓名:<?=$row[1]?>
-        <br>性別:<?=$row[2]?>生
-        <br>留言主題:<?=$row[3]?>
-        <br>留言時間:<?=nl2br($row[4])?>
-        <br>留言內容:<?=$row[5]?><br>
+        <br>第<?= $row[0] ?>位訪客
+        <br>訪客姓名:<?= $row[1] ?>
+        <br>性別:<?= $row[2] ?>生
+        <br>留言主題:<?= $row[3] ?>
+        <br>留言時間:<?= nl2br($row[4]) ?>
+        <br>留言內容:<?= $row[5] ?><br>
     <?php endwhile; ?>
 </div>
 <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js'></script>
@@ -70,10 +68,10 @@ $row = mysql_fetch_row($result);
                 var $this_Top = $this.scrollTop();
 
                 //當高度小於100時，關閉區塊
-                if ($this_Top < 100) {
+                if ($this_Top < 50) {
                     $(".top").removeClass("test");
                 }
-                if ($this_Top > 100) {
+                if ($this_Top > 50) {
                     $(".top").addClass("test");
                 }
             }).scroll();
@@ -90,11 +88,11 @@ $row = mysql_fetch_row($result);
 </script>
 <script type="text/javascript">
     //隱藏top
-    $(document).ready(function(){
+    $(document).ready(function () {
         $("#_top").hide()
-        $(function(){
-            $(window).scroll(function(){
-                if($(this).scrollTop()>1){//當window的scrolltop距離>1，top淡出，反之淡入
+        $(function () {
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 1) {//當window的scrolltop距離>1，top淡出，反之淡入
                     $("#_top").fadeIn();
                 } else {
                     $("#_top").fadeOut();
