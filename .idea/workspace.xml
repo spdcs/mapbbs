@@ -37,11 +37,11 @@
       <file leaf-file-name="member.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/member.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="25" column="54" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
+            <state relative-caret-position="462">
+              <caret line="21" column="54" selection-start-line="21" selection-start-column="54" selection-end-line="21" selection-end-column="54" />
               <folding>
-                <marker date="1470485190470" expanded="true" signature="334:379" ph="SELECT * FRO... data" />
-                <marker date="1470485190470" expanded="true" signature="440:465" ph="..." />
+                <marker date="1470487886003" expanded="true" signature="335:380" ph="SELECT * FRO... data" />
+                <marker date="1470487886003" expanded="true" signature="441:466" ph="..." />
               </folding>
             </state>
           </provider>
@@ -50,19 +50,19 @@
       <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="53" column="68" selection-start-line="53" selection-start-column="68" selection-end-line="53" selection-end-column="68" />
+            <state relative-caret-position="-778">
+              <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
               <folding>
-                <marker date="1470487287977" expanded="true" signature="72:97" ph="select usern... data" />
+                <marker date="1470488002189" expanded="true" signature="72:97" ph="select usern... data" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
+            <state relative-caret-position="946">
               <caret line="73" column="35" selection-start-line="73" selection-start-column="35" selection-end-line="73" selection-end-column="35" />
               <folding>
                 <marker date="1470487746316" expanded="true" signature="105:252" ph="select bbs.i... bbs" />
@@ -93,11 +93,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bbs.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="bbs.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/css/bbs.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="718">
-              <caret line="45" column="18" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
+            <state relative-caret-position="968">
+              <caret line="44" column="6" selection-start-line="44" selection-start-column="6" selection-end-line="44" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -138,13 +138,13 @@
         <option value="$PROJECT_DIR$/../php/bbs.php" />
         <option value="$PROJECT_DIR$/../php/conn.php" />
         <option value="$PROJECT_DIR$/bbs.php" />
-        <option value="$PROJECT_DIR$/member.php" />
         <option value="$PROJECT_DIR$/bbs_add.php" />
         <option value="$PROJECT_DIR$/login_connect.php" />
-        <option value="$PROJECT_DIR$/assets/css/bbs.css" />
-        <option value="$PROJECT_DIR$/login.php" />
         <option value="$PROJECT_DIR$/assets/css/global.css" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/member.php" />
+        <option value="$PROJECT_DIR$/login.php" />
+        <option value="$PROJECT_DIR$/assets/css/bbs.css" />
       </list>
     </option>
   </component>
@@ -348,15 +348,15 @@
       <workItem from="1470397616173" duration="19000" />
       <workItem from="1470397720323" duration="18000" />
       <workItem from="1470398750564" duration="794000" />
-      <workItem from="1470472596501" duration="13915000" />
+      <workItem from="1470472596501" duration="14799000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="191838000" />
+    <option name="totallyTimeSpent" value="192722000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="0" width="1378" height="735" extended-state="0" />
+    <frame x="-8" y="0" width="1378" height="735" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10792951" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -574,22 +574,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/member.php">
+    <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="25" column="54" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
+        <state relative-caret-position="946">
+          <caret line="73" column="35" selection-start-line="73" selection-start-column="35" selection-end-line="73" selection-end-column="35" />
           <folding>
-            <marker date="1470485190470" expanded="true" signature="334:379" ph="SELECT * FRO... data" />
-            <marker date="1470485190470" expanded="true" signature="440:465" ph="..." />
+            <marker date="1470487746316" expanded="true" signature="105:252" ph="select bbs.i... bbs" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/bbs.css">
+    <entry file="file://$PROJECT_DIR$/member.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="718">
-          <caret line="45" column="18" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
-          <folding />
+        <state relative-caret-position="462">
+          <caret line="21" column="54" selection-start-line="21" selection-start-column="54" selection-end-line="21" selection-end-column="54" />
+          <folding>
+            <marker date="1470487886003" expanded="true" signature="335:380" ph="SELECT * FRO... data" />
+            <marker date="1470487886003" expanded="true" signature="441:466" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -603,21 +605,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="53" column="68" selection-start-line="53" selection-start-column="68" selection-end-line="53" selection-end-column="68" />
+        <state relative-caret-position="-778">
+          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
           <folding>
-            <marker date="1470487287977" expanded="true" signature="72:97" ph="select usern... data" />
+            <marker date="1470488002189" expanded="true" signature="72:97" ph="select usern... data" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/assets/css/bbs.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="73" column="35" selection-start-line="73" selection-start-column="35" selection-end-line="73" selection-end-column="35" />
-          <folding>
-            <marker date="1470487746316" expanded="true" signature="105:252" ph="select bbs.i... bbs" />
-          </folding>
+        <state relative-caret-position="968">
+          <caret line="44" column="6" selection-start-line="44" selection-start-column="6" selection-end-line="44" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -8,16 +8,6 @@ $row = mysql_fetch_row($result);
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<style>
-    input {
-        padding: 4px 10px;
-        background: #dfdfdf;
-        border: 1;
-        cursor: pointer;
-        -webkit-border-radius: 5px;
-        border-radius: 4px;
-    }
-</style>
 <head>
     <meta charset="UTF-8">
     <title>登入</title>

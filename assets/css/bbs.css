@@ -7,7 +7,7 @@
 }
 
 a {
-    color: #fff;
+    color: #4d9487;
     text-decoration: none;
 }
 
@@ -39,6 +39,12 @@ a:hover {
     /*display:inline;*/
     float: left;
     list-style: none;
+    color: #fff;
+    text-decoration: none;
+}
+.menu a:hover {
+    color: #00F;
+    text-decoration: none;
 }
 
 .comeback {
@@ -55,3 +61,10 @@ a:hover {
 
 
 /***************************/
+
+input {
+    padding: 4px 10px;
+    background: #dfdfdf;
+    border: 1px;
+    border-radius: 4px;
+}
