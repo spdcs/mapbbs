@@ -14,7 +14,7 @@ if($account != null && $password != null && $row[0] == $account && $row[1] == $p
 {
     $_SESSION['account'] = $account;
     echo '登入成功!';
-    echo '<meta http-equiv=REFRESH CONTENT=1;url=bbs.php>';
+    echo '<meta http-equiv=REFRESH CONTENT=1;url=index.php>';
 }
 else
 {

@@ -1,7 +1,6 @@
-<?php session_start(); ?>
-<title>個人資料</title>
-<?php
+<?php session_start();
 include("conn.php");
+error_reporting(0);
 
 if($_SESSION['account'] != null)
 {
@@ -27,3 +26,5 @@ else
     echo '<meta http-equiv=REFRESH CONTENT=2;url=index.php>';
 }
 ?>
+
+<title>個人資料</title>
