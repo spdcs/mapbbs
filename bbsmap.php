@@ -5,6 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/global.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <style type="text/css">
         html, body { height: 100%; margin: 0; padding: 0; }
         /*#map { height: 800px; width: 1000px;}*/
@@ -44,7 +45,6 @@
                     <?php //for($i=0;$i < count($array);$i++){
                     foreach ($array as $key){
 
-
                     ?>
                     map.addControl(new GSmallMapControl());
 
@@ -62,7 +62,6 @@
 <?php } ?>
                 }
             }
-
     </script>
 </head>
 <body onload="load()" onunload="GUnload()">
