@@ -20,10 +20,6 @@ $row = mysql_fetch_row($result);
 <div class="top">
     <div class="menu">
         <a href="index.php">留言板</a>
-        <a href="bbs_add.php">填寫留言</a>
-        <a href="login.php">會員登入</a>
-        <a href="member.php">會員資料</a>
-        <a href="logout.php">會員登出</a>
     </div>
     <div class="hello-name">
         <?php
