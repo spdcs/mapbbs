@@ -52,17 +52,17 @@ $account = $_SESSION['account'];
 $sql = "SELECT * FROM data where account = '$account'";
 $result = mysql_query($sql);
 ?>
-<table style="border:2px #cccccc solid;" cellpadding="3" border="0">
+<table class="table" >
     <tr>
         <td>帳號</td>
-        <td>│&nbsp密碼</td>
-        <td>│用戶名</td>
-        <td>│&nbsp生日</td>
-        <td>│email</td>
+        <td>密碼</td>
+        <td>用戶名</td>
+        <td>生日</td>
+        <td>email</td>
     </tr>
     <?php
     while ($row = mysql_fetch_row($result)) {
-        echo "<tr><td>$row[0]</td><td>│&nbsp$row[1]</td><td>│$row[3]</td><td>│&nbsp$row[5]/$row[6]/$row[7]</td><td>│$row[8]</td></tr>";
+        echo "<tr><td>$row[0]</td><td>$row[1]</td><td>$row[3]</td><td>$row[5]/$row[6]/$row[7]</td><td>$row[8]</td></tr>";
     }
     } else {
         echo '您無權限觀看此頁面!';
