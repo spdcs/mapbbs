@@ -30,6 +30,7 @@ $row = mysql_fetch_row($result);
 <body>
 <div class="top">
     <div class="menu">
+        <a href="bbsmap.php">地圖留言板</a>
         <a href="index.php">留言板</a>
         <a href="bbs_add.php">填寫留言</a>
         <?php
