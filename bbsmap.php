@@ -26,10 +26,7 @@ $row = mysql_fetch_row($result);
     </style>
 
     <?php
-    include("conn.php");
     $sql = "select bbs.id, data.username, data.sex, bbs.subject, bbs.time, bbs.content, bbs.address from bbs LEFT JOIN data ON data.account=bbs.account order by bbs.id desc";
-    $result = mysql_query($sql);
-    //$row = mysql_fetch_array($result);
     $array = array();
     while ($record = mysql_fetch_array($result)) {
 
@@ -51,7 +48,6 @@ $row = mysql_fetch_row($result);
         function load() {
             if (GBrowserIsCompatible()) {
                 var map = new GMap2(document.getElementById("map"));
-
                 var geocoder = new GClientGeocoder();
                 var address;
 

@@ -5,16 +5,6 @@ $account = $_SESSION['account'];
 $sql = "select bbs.id, data.username, data.sex, bbs.subject, bbs.time, bbs.content from bbs LEFT JOIN data ON data.account=bbs.account order by bbs.id desc";
 $result = mysql_query($sql);
 $row = mysql_fetch_row($result);
-//while ($row = mysql_fetch_row($result)) {
-//    echo "<br>第" . $row[0] . "位訪客</br>";
-//    echo "<br>訪客姓名:" . $row[1];
-//    echo "<br>性別:" . $row[2] . "生";
-//    echo "<br>留言主題:" . $row[3] . "</a>";
-//    echo "<br>留言時間:" . nl2br($row[4]);
-//    echo "<br>留言內容:" . $row[5];
-//    echo "<hr>";
-//
-//}
 
 ?>
 <html>

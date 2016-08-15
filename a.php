@@ -1,5 +1,4 @@
 <?php
-//..
 include("conn.php");
 $sql="select bbs.id, data.username, data.sex, bbs.subject, bbs.time, bbs.content, bbs.address from bbs LEFT JOIN data ON data.account=bbs.account order by bbs.id desc";
 $result=mysql_query($sql);
