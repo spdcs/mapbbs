@@ -16,7 +16,7 @@ $row = mysql_fetch_row($result);
         $(document).ready(function () {
 
             var URLs = "a.php";
-            var NumOfJData = json.length;
+
 
             $.ajax({
                 url: URLs,
@@ -24,8 +24,9 @@ $row = mysql_fetch_row($result);
                 dataType: 'json',
 
                 success: function(json) {
+                    var NumOfJData = json.length;
                     for (var i = 0; i < NumOfJData; i++) {
-                        alert(json[i]["id"]);  
+                        alert(json[i]["id"]);
                         alert(json[i]["username"]);
                         alert(json[i]["sex"]);
                     }
