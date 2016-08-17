@@ -50,24 +50,49 @@ $row = mysql_fetch_row($result);
                 var map = new GMap2(document.getElementById("map"));
                 var geocoder = new GClientGeocoder();
                 var address;
+                var username;
+                var time;
+                var subject;
+                var content;
 
                 <?php //for($i=0;$i < count($array);$i++){
-                foreach ($array as $key){
+                //foreach ($array as $key){
                 ?>
-                map.addControl(new GSmallMapControl());
+                $(document).ready(function () {
+                    var URLs = "a.php";
+                    $.ajax({
+                        url: URLs,
+                        type: "GET",
+                        dataType: 'json',
+                        success: function (json) {
+                            var NumOfjson = json.length;
+                            for (var i = 0; i < NumOfjson; i++) {
+                                map.addControl(new GSmallMapControl());
+                                address = json[i]["address"];//須修正
+                                username = json[i]["username"];
+                                time = json[i]["time"];
+                                subject = json[i]["subject"];
+                                content = json[i]["content"];
 
-                address = "<?php  echo $key['address'] ?>";//須修正
-                geocoder.getLatLng(address, function (point) {
-                    if (!point) {
-                        alert('Google Maps 找不到該地址，無法顯示地圖！'); //如果Google Maps無法顯示該地址的警示文字
-                    } else {
-                        map.setCenter(point, 13);
-                        var marker = new GMarker(point);
-                        map.addOverlay(marker);
-                        marker.openInfoWindowHtml("<?php echo "留言者姓名:" . $key['username'] . "<br>留言時間:" . $key['time'] . "<br>留言主題:" . $key['subject'] . "<br>留言內容:" . $key['content'] . "<br>地址:" . $key['address']  ?>");//須修正
-                    }
+//                address = "<?php // echo $key['address'] ?>//";//須修正
+                                geocoder.getLatLng(address, function (point) {
+                                    if (!point) {
+                                        alert('Google Maps 找不到該地址，無法顯示地圖！'); //如果Google Maps無法顯示該地址的警示文字
+                                    } else {
+                                        map.setCenter(point, 13);
+                                        var marker = new GMarker(point);
+                                        map.addOverlay(marker);
+                                        marker.openInfoWindowHtml("留言者姓名:" + username + "<br>留言時間:" + time + "<br>留言主題:" + subject + "<br>留言內容:" + content + "<br>地址:" + address);//須修正
+                                    }
+                                });
+                            }
+                        },
+                        error: function () {
+                            alert("ERROR!!!");
+                        }
+                    });
                 });
-                <?php } ?>
+                <?php //} ?>
             }
         }
     </script>
