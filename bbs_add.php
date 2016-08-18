@@ -110,15 +110,21 @@ else
     function checkInput(form){
         //驗證標題是否為空
         if(form.subject.value == ''){
-            alert('標題不能為空！');
+            alert('標題不能為空');
             form.subject.focus();
             return false;
         }
 
-        //驗證输入内容是否為空
+        //驗證輸入内容是否為空
         if(form.content.value == ''){
-            alert('請說點什麼！');
+            alert('請說點什麼');
             form.content.focus();
+            return false;
+        }
+        //驗證地址是否為空
+        if(form.address.value == ''){
+            alert('請輸入地址');
+            form.address.focus();
             return false;
         }
 

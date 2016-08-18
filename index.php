@@ -2,7 +2,7 @@
 include("conn.php");
 error_reporting(0);
 $account = $_SESSION['account'];
-$sql = "select bbs.id, data.username, data.sex, bbs.subject, bbs.time, bbs.content from bbs LEFT JOIN data ON data.account=bbs.account order by bbs.id desc";
+$sql = "select bbs.id, data.username, data.sex, bbs.subject, bbs.time, bbs.content, bbs.address from bbs LEFT JOIN data ON data.account=bbs.account order by bbs.id desc";
 $result = mysql_query($sql);
 $row = mysql_fetch_row($result);
 
@@ -52,7 +52,8 @@ $row = mysql_fetch_row($result);
         <br>性別:<?= $row[2] ?>生
         <br>留言主題:<?= $row[3] ?>
         <br>留言時間:<?= nl2br($row[4]) ?>
-        <br>留言內容:<?= $row[5] ?><br>
+        <br>留言內容:<?= $row[5] ?>
+        <br>地址:<?= ($row[6]) ?><br>
     <?php endwhile; ?>
 </div>
 <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js'></script>
@@ -83,7 +84,7 @@ $row = mysql_fetch_row($result);
     });
 </script>
 <script type="text/javascript">
-    //隱藏top
+    //頂端隱藏top
     $(document).ready(function () {
         $("#_top").hide()
         $(function () {

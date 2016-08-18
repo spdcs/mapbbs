@@ -43,7 +43,7 @@ if (isset($_POST['submit'])){
                 <tr><td>生日：
                         <select name="birth">
                             <?php
-                            for($i=1988;$i<2000;$i++)
+                            for($i=1950;$i<2010;$i++)
                             { echo "<option value=\"" . $i . "\">" . $i . "</option>";}
                             ?>
                         </select>年
