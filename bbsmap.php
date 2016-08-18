@@ -74,7 +74,7 @@ $row = mysql_fetch_row($result);
                                 subject = json[i]["subject"];
                                 content = json[i]["content"];
 
-//                address = "<?php // echo $key['address'] ?>//";//須修正
+                                //address = "<?php // echo $key['address'] ?>//";//須修正
                                 geocoder.getLatLng(address, function (point) {
                                     if (!point) {
                                         alert('Google Maps 找不到該地址，無法顯示地圖！'); //如果Google Maps無法顯示該地址的警示文字

@@ -25,8 +25,8 @@
                         type: "GET",
                         dataType: 'json',
                         success: function(json) {
-                            var NumOfJData = json.length;
-                            for (var i = 0; i < NumOfJData; i++) {
+                            var NumOfjson = json.length;
+                            for (var i = 0; i < NumOfjson; i++) {
                                 map.addControl(new GSmallMapControl());
 
                                 address = json[i]["address"];//須修正

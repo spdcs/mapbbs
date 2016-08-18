@@ -19,6 +19,7 @@ $row = mysql_fetch_row($result);
 <body>
 <div class="top">
     <div class="menu">
+        <a href="mapbbs.php">地圖留言板</a>
         <a href="index.php">留言板</a>
     </div>
     <div class="hello-name">

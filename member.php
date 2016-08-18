@@ -1,6 +1,10 @@
 <?php session_start();
 include("conn.php");
 error_reporting(0);
+if ($_SESSION['account'] != null) {
+$account = $_SESSION['account'];
+$sql = "SELECT * FROM data where account = '$account'";
+$result = mysql_query($sql);
 ?>
 
 <html>
@@ -43,13 +47,7 @@ error_reporting(0);
         <a href="">top</a>
     </div>
 </div>
-<?php
-if ($_SESSION['account'] != null) {
 
-$account = $_SESSION['account'];
-$sql = "SELECT * FROM data where account = '$account'";
-$result = mysql_query($sql);
-?>
 <table class="table" >
     <tr>
         <td>帳號</td>
