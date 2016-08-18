@@ -37,7 +37,7 @@ $row = mysql_fetch_row($result);
         if ($_SESSION['account'] != null) {
             echo $row[1] . " 你好";
         } else {
-            echo "";
+            echo " ";
         }
         ?>
     </div>

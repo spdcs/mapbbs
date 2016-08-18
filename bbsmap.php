@@ -42,7 +42,7 @@ $row = mysql_fetch_row($result);
     //print_r($json);
     ?>
 
-    <script src="http://maps.google.com/maps?file=api&v=2&key=AIzaSyAuw24TfmCWVXYt0w5Lsns-7tSfz3EkIw0"
+    <script src="http://maps.google.com/maps?file=api&v=3&key=AIzaSyAuw24TfmCWVXYt0w5Lsns-7tSfz3EkIw0"
             type="text/javascript"></script>
     <script type="text/javascript">
         function load() {
@@ -63,23 +63,23 @@ $row = mysql_fetch_row($result);
                     $.ajax({
                         url: URLs,
                         type: "GET",
-                        dataType: 'json',
-                        success: function (json) {
-                            var NumOfjson = json.length;
-                            for (var i = 0; i < NumOfjson; i++) {
-                                map.addControl(new GSmallMapControl());
-                                address = json[i]["address"];//須修正
-                                username = json[i]["username"];
-                                time = json[i]["time"];
-                                subject = json[i]["subject"];
-                                content = json[i]["content"];
+                                            dataType: 'json',
+                                            success: function (json) {
+                                            var NumOfjson = json.length;
+                                            for (var i = 0; i < NumOfjson; i++) {
+                                                map.addControl(new GSmallMapControl());
+                                                username = json[i]["username"];
+                                                time = json[i]["time"];
+                                                subject = json[i]["subject"];
+                                                content = json[i]["content"];
+                                                address = json[i]["address"];//須修正
 
-                                //address = "<?php // echo $key['address'] ?>//";//須修正
-                                geocoder.getLatLng(address, function (point) {
-                                    if (!point) {
-                                        alert('Google Maps 找不到該地址，無法顯示地圖！'); //如果Google Maps無法顯示該地址的警示文字
-                                    } else {
-                                        map.setCenter(point, 13);
+                                                //address = "<?php // echo $key['address'] ?>//";//須修正
+                                                geocoder.getLatLng(address, function (point) {
+                                                    if (!point) {
+                                                        alert('Google Maps 找不到該地址，無法顯示地圖！'); //如果Google Maps無法顯示該地址的警示文字
+                                                    } else {
+                                                        map.setCenter(point, 13);
                                         var marker = new GMarker(point);
                                         map.addOverlay(marker);
                                         marker.openInfoWindowHtml("留言者姓名:" + username + "<br>留言時間:" + time + "<br>留言主題:" + subject + "<br>留言內容:" + content + "<br>地址:" + address);//須修正
