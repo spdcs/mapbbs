@@ -37,6 +37,8 @@ a:hover {
 .menu {
     float: left;
     margin-right: 50px;
+    position: relative;
+    z-index: 0;
 }
 
 .menu a {
@@ -51,6 +53,7 @@ a:hover {
 .menu a:hover {
     color: #00F;
     text-decoration: none;
+    float: left;
 }
 
 .comeback {

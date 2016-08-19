@@ -20,8 +20,8 @@ $result = mysql_query($sql);
 <body>
 <div class="top">
     <div class="menu">
+        <a href="bbsmap.php">地圖留言板</a>
         <a href="index.php">留言板</a>
-        <a href="member.php">會員資料</a>
         <a href="logout.php">會員登出</a>
         <?php
         if ($_SESSION['account'] != null) {
