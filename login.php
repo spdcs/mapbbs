@@ -13,7 +13,6 @@ $row = mysql_fetch_row($result);
     <title>登入</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/bbs.css">
-    <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/global.css">
 </head>
 <body>
@@ -21,6 +20,7 @@ $row = mysql_fetch_row($result);
     <div class="menu">
         <a href="bbsmap.php">地圖留言板</a>
         <a href="index.php">留言板</a>
+        <a href="register.php">註冊會員</a>
     </div>
     <div class="hello-name">
         <?php
@@ -34,23 +34,27 @@ $row = mysql_fetch_row($result);
     </div>
 </div>
 <div class="container">
-    <div class="top-word">
+    <div>
         <h3>會員登入</h3>
     </div>
-    <div class="login-from">
-        <form action="login_connect.php" method="post" name="login" >
-            <table cellpadding="2" border="0">
-                <tr>
-                    <td>帳號：</td>
-                    <td><input class="form-control" name="account" type="text" size="12"></td>
-                </tr>
-                <tr>
-                    <td>密碼：</td>
-                    <td><input class="form-control" name="password" type="password" size="12"></td>
-                </tr>
-            </table>
-            <br>
-            <input type="submit" name="submit" value="登入"/> <a href="register.php">註冊會員</a>
+    <div>
+        <form action="login_connect.php" method="post" name="login" class="form-horizontal" role="form" >
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">帳號</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="account" id="inputEmail3" placeholder="輸入帳號">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">密碼</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control"name="password" id="inputEmail3" placeholder="輸入密碼">
+                    </div>
+                </div>
+
+<div class="login5">
+            <button type="submit" class="btn btn-default">登入</button>
+    </div>
         </form>
     </div>
 </div>
