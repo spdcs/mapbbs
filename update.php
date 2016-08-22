@@ -48,12 +48,13 @@ else
         <a href="logout.php">會員登出</a>
     </div>
     </div>
-<form action="update_finish.php" method="post">
-    <table class="member1">
-        <tr><td>帳號：<?= $account?>(此項目無法修改)</td></tr>
-        <tr><td>密碼：<input type="password" size="23" name="password" value=<?=$row[1]?>></td></tr>
+<div class="container1">
+<form action="update_finish.php" method="post" >
+    <table class="table">
+        <tr><td>帳號：<?= $account?></td></tr>
+        <tr><td>密碼：<input type="password" name="password" value=<?=$row[1]?>></td></tr>
         <tr><td>再次輸入密碼：<input type="password" size="18" name="password2" value=<?=$row[2]?>></td></tr>
-        <tr><td>用戶名：<input type="text" size="23" name="username" value=<?=$row[3]?>></tr>
+        <tr><td>用戶名：<input type="text"  name="username" value=<?=$row[3]?>></tr>
         <tr><td>生日：
                 <?php
                 echo "<select name=\"birth\" value=\"$row[5]\">";
@@ -96,5 +97,6 @@ else
         <input type=submit name=submit align="center" value=確定
     </div>
 </form>
+    </body>
 
 

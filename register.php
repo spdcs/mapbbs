@@ -33,11 +33,11 @@ if (isset($_POST['submit'])){
     </div>
 </div>
 <h2 class="register1">註冊會員</h2>
-    <div>
+    <div class="container1">
         <form action="register_connect.php" method="post" >
             <table class="table">
-                <tr><td class="register5"> 帳號：<input type="text" size="23" name="account" ></td></tr>
-                <tr><td>密碼：<input type="password" size="23" name="password"></td></tr>
+                <tr><td> 帳號：<input type="text" size="23" name="account" placeholder="8到16字" ></td></tr>
+                <tr><td>密碼：<input type="password" size="23" name="password" placeholder="開頭只能為英文"></td></tr>
                 <tr><td>再次輸入密碼：<input type="password" size="18" name="password2"></td></tr>
                 <tr><td>用戶名：<input type="text" size="23" name="username"></td></tr>
                 <tr><td>性別：女生<input type="radio" name="sex" value="女" checked>男生<input type="radio" name="sex" value="男"></td></tr>
@@ -63,11 +63,13 @@ if (isset($_POST['submit'])){
                     </td></tr>
                 <tr><td>email：<input type="email" size="25" name="email"></td></tr>
             </table>
-    </div>
-    <div class="register3">
-        <input type="submit" name="submit" value="送出資料" />
-        <input type="reset" value="清空重填">
-    </div>
+            <div class="register3">
+                <input type="submit" name="submit" value="送出資料" />
+                <input type="reset" value="清空重填">
+            </div>
+
+
     </form>
+    </div>
 </body>
 </html>

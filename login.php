@@ -43,18 +43,18 @@ $row = mysql_fetch_row($result);
                 <label for="inputEmail3" class="col-sm-2 control-label">帳號</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" name="account" id="inputEmail3" placeholder="輸入帳號">
-                    </div>
                 </div>
-                <div class="form-group">
+            </div>
+            <div class="form-group">
                     <label for="inputEmail3" class="col-sm-2 control-label">密碼</label>
-                    <div class="col-sm-10">
+                <div class="col-sm-10">
                         <input type="password" class="form-control"name="password" id="inputEmail3" placeholder="輸入密碼">
-                    </div>
                 </div>
+            </div>
 
-<div class="login5">
+       <div class="login5">
             <button type="submit" class="btn btn-default">登入</button>
-    </div>
+       </div>
         </form>
     </div>
 </div>
