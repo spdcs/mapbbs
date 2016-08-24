@@ -2,7 +2,7 @@
 include("conn.php");
 error_reporting(0);
 $account = $_SESSION['account'];
-$sql = "select bbs.id, data.username, data.sex, bbs.subject, bbs.time, bbs.content, bbs.address from bbs LEFT JOIN data ON data.account=bbs.account order by bbs.id desc";
+$sql = "select bbs.id, data.username, data.sex, bbs.subject, bbs.time, bbs.content from bbs LEFT JOIN data ON data.account=bbs.account order by bbs.id desc";
 $result = mysql_query($sql);
 $row = mysql_fetch_row($result);
 
@@ -22,36 +22,41 @@ $row = mysql_fetch_row($result);
     <div class="menu">
         <a href="bbsmap.php">地圖留言板</a>
         <a href="index.php">留言板</a>
+        <a href="bbs_add.php">填寫留言</a>
         <?php
         if($_SESSION['account'] == ""){
             echo "<a class=\" letter2\"   <a href=\"login.php\">會員登入</a>";
         }
         if($_SESSION['account'] != ""){
-            echo "<a class=\" letter2\" <a href=\"bbs_add.php\">填寫留言<a href=\"logout.php\">會員登出 <a href=\"member.php\">會員資料</a>";
+            echo "<a class=\" letter2\" <a href=\"logout.php\">會員登出</a>";
         }?>
+        <a href="member.php">會員資料</a>
     </div>
     <div class="hello-name">
         <?php
         if ($_SESSION['account'] != null) {
             echo $row[1] . " 你好";
         } else {
-            echo " ";
+            echo "";
         }
         ?>
-        <div class="comeback pull-right" id="_top">
-            <a href="">top</a>
-        </div>
+    </div>
+    <div class="comeback pull-right" id="_top">
+        <a href="">top</a>
     </div>
 </div>
-<div class="container a">
+<div>
     <?php while ($row = mysql_fetch_row($result)): ?>
+        <div class="well" >
+            <div class="login6"
         <br>第<?= $row[0] ?>位訪客
         <br>訪客姓名:<?= $row[1] ?>
         <br>性別:<?= $row[2] ?>生
         <br>留言主題:<?= $row[3] ?>
         <br>留言時間:<?= nl2br($row[4]) ?>
         <br>留言內容:<?= $row[5] ?>
-        <br>地址:<?= ($row[6]) ?><br>
+            </div>
+        </div>
     <?php endwhile; ?>
 </div>
 <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js'></script>
@@ -82,7 +87,7 @@ $row = mysql_fetch_row($result);
     });
 </script>
 <script type="text/javascript">
-    //頂端隱藏top
+    //隱藏top
     $(document).ready(function () {
         $("#_top").hide()
         $(function () {
