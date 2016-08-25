@@ -98,6 +98,7 @@ else
     <div class="login1">
         <input type=submit name=submit align="center" value=確定
     </div>
+    </div>
 </form>
     </body>
 
