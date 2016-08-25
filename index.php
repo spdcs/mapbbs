@@ -51,9 +51,16 @@ $row = mysql_fetch_row($result);
         <br>訪客姓名:<?= $row[1] ?>
         <br>性別:<?= $row[2] ?>生
             <br>留言時間:<?= nl2br($row[4]) ?>
-        <br>留言主題:<?= $row[3] ?>
-        <br>留言內容:<?= $row[5] ?>
-        </div>
+            <div class="panel panel-danger">
+            <div class="panel-heading">
+                留言主題:<?= $row[3]?>
+            </div>
+                <div class="panel-body">
+                    留言內容:<?= $row[5] ?>
+             </div>
+                </div>
+            </div>
+
     <?php endwhile; ?>
 </div>
 <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js'></script>
