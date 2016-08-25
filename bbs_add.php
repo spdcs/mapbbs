@@ -64,11 +64,7 @@ else
         <?php
 
         if ($_SESSION['account'] != null) {
-<<<<<<< HEAD
             echo $username . " 你好";
-=======
-            echo $username." 你好";
->>>>>>> git
         }
         else
         {
