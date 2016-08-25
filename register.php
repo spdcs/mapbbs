@@ -63,13 +63,15 @@ if (isset($_POST['submit'])){
                     </td></tr>
                 <tr><td>email：<input type="email" size="25" name="email"></td></tr>
             </table>
-            <div class="register3">
-                <input type="submit" name="submit" value="送出資料" />
-                <input type="reset" value="清空重填">
-            </div>
 
+    </div>
 
     </form>
-    </div>
+
+<div class="register3">
+    <input type="submit" name="submit" value="送出資料" />
+    <input type="reset" value="清空重填">
+</div>
+
 </body>
 </html>
