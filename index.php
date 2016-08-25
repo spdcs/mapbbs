@@ -39,9 +39,9 @@ $row = mysql_fetch_row($result);
             echo "";
         }
         ?>
-    </div>
-    <div class="comeback pull-right" id="_top">
-        <a href="">top</a>
+        <div class="comeback pull-right" id="_top">
+            <a href="">top</a>
+        </div>
     </div>
 </div>
 <div>

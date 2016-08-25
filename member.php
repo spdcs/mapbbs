@@ -43,9 +43,6 @@ $result = mysql_query($sql);
             }
         ?>
     </div>
-    <div class="comeback pull-right" id="_top">
-        <a href="">top</a>
-    </div>
 </div>
 
 <table class="table" >
