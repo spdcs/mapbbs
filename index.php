@@ -50,8 +50,8 @@ $row = mysql_fetch_row($result);
         <br>第<?= $row[0] ?>位訪客
         <br>訪客姓名:<?= $row[1] ?>
         <br>性別:<?= $row[2] ?>生
+            <br>留言時間:<?= nl2br($row[4]) ?>
         <br>留言主題:<?= $row[3] ?>
-        <br>留言時間:<?= nl2br($row[4]) ?>
         <br>留言內容:<?= $row[5] ?>
         </div>
     <?php endwhile; ?>
