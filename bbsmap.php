@@ -1,6 +1,7 @@
 <?php session_start();
 include("conn.php");
 error_reporting(0);
+$username = $_SESSION['username'];
 $account = $_SESSION['account'];
 $sql = "select bbs.id, data.username, data.sex, bbs.subject, bbs.time, bbs.content from bbs LEFT JOIN data ON data.account=bbs.account order by bbs.id desc";
 $result = mysql_query($sql);
@@ -114,7 +115,7 @@ $row = mysql_fetch_row($result);
     <div class="hello-name">
         <?php
         if ($_SESSION['account'] != null) {
-            echo $row[1] . " 你好";
+            echo $username . " 你好";
         } else {
             echo "";
         }

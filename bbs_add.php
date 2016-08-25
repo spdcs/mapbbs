@@ -1,6 +1,7 @@
 <?php session_start();
 include("conn.php");
 error_reporting(0);
+$username = $_SESSION['username'];
 $sql = "select username from data";
 $result = mysql_query($sql);
 $row = mysql_fetch_row($result);
@@ -63,7 +64,7 @@ else
         <?php
 
         if ($_SESSION['account'] != null) {
-            echo $row[0]." 你好";
+            echo $username . " 你好";
         }
         else
         {
