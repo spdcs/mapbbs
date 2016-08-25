@@ -1,6 +1,7 @@
 <?php session_start();
 include("conn.php");
 error_reporting(0);
+$username = $_SESSION['username'];
 if ($_SESSION['account'] != null) {
 $account = $_SESSION['account'];
 $sql = "SELECT * FROM data where account = '$account'";
@@ -37,7 +38,7 @@ $result = mysql_query($sql);
     <div class="hello-name">
         <?php
             if ($_SESSION['account'] != null) {
-                echo $row[3] . " 你好";
+                echo $username . " 你好";
             } else {
                 echo "";
             }

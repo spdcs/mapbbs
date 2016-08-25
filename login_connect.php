@@ -14,6 +14,12 @@ if($account != null && $password != null && $row[0] == $account && $row[1] == $p
     $_SESSION['account'] = $account;
     echo '登入成功!';
     echo '<meta http-equiv=REFRESH CONTENT=1;url=index.php>';
+    $_SESSION['username'] = $row[3];
+    $_SESSION['sex'] = $row[4];
+    $_SESSION['birth'] = $row[5];
+    $_SESSION['mon'] = $row[6];
+    $_SESSION['dayday'] = $row[7];
+    $_SESSION['email'] = $row[8];
 }
 else
 {
