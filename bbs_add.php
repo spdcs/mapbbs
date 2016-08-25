@@ -21,9 +21,9 @@ if ($_SESSION['account'] != null) {
             $sql = "insert into bbs (id,account,subject,content,time,address) value('','$account','$subject','$content','$time','$_POST[address]')";
             mysql_query($sql);
             echo "發布成功";
-            echo '<meta http-equiv=REFRESH CONTENT=2;url= bbsmap.php>';
+            echo '<meta http-equiv=REFRESH CONTENT=2;url=bbsmap.php>';
         }
-    }
+}
 }
 else
 {
