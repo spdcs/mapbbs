@@ -36,10 +36,12 @@ $result = mysql_query($sql);
     </div>
     <div class="hello-name">
         <?php
-        if ($_SESSION['account'] != null) {
-            echo $row[3] . " 你好";
-        } else {
-            echo "";
+        while ($row = mysql_fetch_row($result)) {
+            if ($_SESSION['account'] != null) {
+                echo $row[3] . " 你好";
+            } else {
+                echo "";
+            }
         }
         ?>
     </div>
