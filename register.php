@@ -65,12 +65,14 @@ if (isset($_POST['submit'])){
             </table>
 
     </div>
-
-    </form>
-
 <div class="register3">
     <input type="submit" name="submit" value="送出資料" />
     <input type="reset" value="清空重填">
+</div>
+
+    </form>
+
+
 </div>
 
 </body>
