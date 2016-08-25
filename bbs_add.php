@@ -64,7 +64,7 @@ else
         <?php
 
         if ($_SESSION['account'] != null) {
-            echo $username." 你好";
+            echo $username . " 你好";
         }
         else
         {
