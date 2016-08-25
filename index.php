@@ -22,13 +22,12 @@ $row = mysql_fetch_row($result);
     <div class="menu">
         <a href="bbsmap.php">地圖留言板</a>
         <a href="index.php">留言板</a>
-        <a href="bbs_add.php">填寫留言</a>
         <?php
         if($_SESSION['account'] == ""){
             echo "<a class=\" letter2\"   <a href=\"login.php\">會員登入</a>";
         }
         if($_SESSION['account'] != ""){
-            echo "<a class=\" letter2\" <a href=\"logout.php\">會員登出</a>";
+            echo "<a class=\" letter2\" <a href=\"logout.php\">會員登出 <a href=\"bbs_add.php\">填寫留言</a>";
         }?>
         <a href="member.php">會員資料</a>
     </div>
