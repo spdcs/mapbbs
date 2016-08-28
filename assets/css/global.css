@@ -36,7 +36,6 @@ html, body { height: 100%; margin:auto; padding: 0; }
 .letter2{
     float: right;
     color: #fff;
-    letter-spacing: 3px;
     line-height: 50px;
     height: 50px;
     margin-right: 20px;
