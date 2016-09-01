@@ -32,6 +32,8 @@ if (isset($_POST['submit'])){
         <a href="login.php">會員登入</a>
     </div>
 </div>
+<div class="container-fluid">
+    <div class="container">
 <h2 class="register1">註冊會員</h2>
     <div class="container1">
         <form action="register_connect.php" method="post" >
@@ -73,6 +75,8 @@ if (isset($_POST['submit'])){
     </form>
 
 
+</div>
+    </div>
 </div>
 
 </body>
