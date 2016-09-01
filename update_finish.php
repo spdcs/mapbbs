@@ -17,7 +17,7 @@ if ($_SESSION['account'] != null && $password != null && $password2 != null && $
     $sql = "update data set password = '$password', password2 = '$password2', username = '$username', birth = '$birth', mon = '$mon', dayday = '$dayday', email = '$email' where account = '$account'";
     if (mysql_query($sql))
     {
-        echo '修改成功!';
+        echo '';
         echo '<meta http-equiv=REFRESH CONTENT=2;url=member.php>';
     }
     else

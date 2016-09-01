@@ -45,8 +45,9 @@ $result = mysql_query($sql);
         ?>
     </div>
 </div>
-
-<table class="table" >
+<div class="container-fluid">
+    <div class="container">
+<table class="table table-bordered">
     <tr>
         <td>帳號</td>
         <td>密碼</td>
@@ -64,5 +65,8 @@ $result = mysql_query($sql);
     }
     ?>
 </table>
+    </div>
+    </div>
+
 
 <title>個人資料</title>

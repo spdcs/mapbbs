@@ -48,8 +48,9 @@ else
         <a href="logout.php">會員登出</a>
     </div>
     </div>
-<div>
-<div class="container1">
+<div class="container-fluid">
+    <div class="container">
+<div >
 <form action="update_finish.php" method="post" >
     <table class="table">
         <tr><td>帳號：<?= $account?></td></tr>
@@ -95,10 +96,13 @@ else
 
     </table>
     </div>
+
     <div class="login1">
         <input type=submit name=submit align="center" value=確定
     </div>
+</div>
     </div>
+</div>
 </form>
     </body>
 
