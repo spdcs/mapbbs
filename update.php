@@ -77,10 +77,15 @@ if ($_SESSION['account'] != null) {
                                value=<?= $row[3] ?>>
                     </div>
                 </div>
-
+<div>
+    <div class="form-group">
+        <label for="inputEmail3" class="col-sm-2 control-label">生日</label>
+        <div class="col-sm-2">
+            </div>
+        </div>
                 <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-2 control-label">年</label>
-                    <div class="col-sm-3">
+                    <label for="inputEmail3" class="col-sm-3 control-label">年</label>
+                    <div class="col-sm-2">
 
                         <select class="form-control" name="birth" value="$row[5]">
                             <?php
@@ -94,13 +99,14 @@ if ($_SESSION['account'] != null) {
                             }
                             ?>
                         </select>
-                        </div>
+
                     </div>
+                </div>
 
 
                 <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-2 control-label">月</label>
-                    <div class="col-sm-3">
+                    <label for="inputEmail3" class="col-sm-3 control-label">月</label>
+                    <div class="col-sm-2">
                         <select class="form-control" name="mon" value="$row[6]">
                             <?php
                             $m = $row[6];
@@ -118,11 +124,9 @@ if ($_SESSION['account'] != null) {
                 </div>
 
 
-                     
-
-                    <div class="form-group">
-                        <label for="inputEmail3" class="col-sm-2 control-label">日</label>
-                        <div class="col-sm-3">
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-3 control-label">日</label>
+                    <div class="col-sm-2">
                         <select class="form-control" name="dayday" value="$row[7]">
                             <?php
                             $d = $row[7];
@@ -139,6 +143,7 @@ if ($_SESSION['account'] != null) {
 
                     </div>
                 </div>
+</div>
 
 
                 <div class="form-group">
@@ -150,13 +155,11 @@ if ($_SESSION['account'] != null) {
                 </div>
 
 
-
-
-    <div class="login1">
-        <input type=submit name=submit align="center" value=確定
+                <div class="login1">
+                    <input type=submit name=submit align="center" value=確定
+                </div>
+        </div>
     </div>
-</div>
-</div>
 </div>
 </form>
 </body>
