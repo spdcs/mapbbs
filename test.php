@@ -26,7 +26,7 @@ $row = mysql_fetch_row($result);
 
 </head>
 
-<body onload="initMap()">
+<body>
 <div class="top">
     <div class="menu">
         <a href="bbsmap.php">地圖留言板</a>
@@ -71,34 +71,31 @@ $row = mysql_fetch_row($result);
                         var subject = json[i].subject;
                         var content = json[i].content;
                         var address = json[i].address;
-                        var infocontent = '留言者姓名：' + username + '<br>留言時間：' + time + '<br>留言主題：' + subject + '<br>留言內容：' + content + '<br>地址：' + address
-                        geocoder.geocode({'address': address}, function (results, status) {
-                            if (status == google.maps.GeocoderStatus.OK) {
-                                map.setCenter(results[0].geometry.location);
-                                var marker = new google.maps.Marker({
-                                    map: map,
-                                    position: results[0].geometry.location,
-                                    icon: 'http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_red.png'
-                                });
-                                infowindow = new google.maps.InfoWindow({
-                                    content: infocontent
-                                });
-                                google.maps.event.addListener(marker, 'click', (function (marker, infocontent, infowindow) {
-                                    return function () {
-                                        infowindow.setContent(infocontent);
-                                        infowindow.open(map, marker);
-                                    };
-                                })(marker, infocontent, infowindow));
-                            }
-                            else {
-                                alert("Geocode was not successful for the following reason: " + status);
-                            }
+                        var infocontent = '留言者姓名：' + username + '<br>留言時間：' + time + '<br>留言主題：' + subject + '<br>留言內容：' + content + '<br>地址：' + address;
+                        var lat = parseFloat(json[i].lat);
+                        var lng = parseFloat(json[i].lng);
+                        var myLatLng = {lat: lat, lng: lng};
+                        console.log(myLatLng);
+                        var marker = new google.maps.Marker({
+                            map: map,
+                            position: myLatLng,
+                            icon: 'http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_red.png'
                         });
+                        var infowindow = new google.maps.InfoWindow({
+                            content: infocontent
+                        });
+                        google.maps.event.addListener(marker, 'click', (function (marker, infocontent, infowindow) {
+                            return function () {
+                                infowindow.setContent(infocontent);
+                                infowindow.open(map, marker);
+                            };
+                        })(marker, infocontent, infowindow));
+
                     }
-                },
+                }
             });
         }
-        ;
+
     </script>
     <div id="map" style="width: 600px; height: 500px"></div> <!--此為地圖顯示大小-->
     <script async defer
