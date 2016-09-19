@@ -8,7 +8,7 @@ $row = mysql_fetch_row($result);
 $time = date("Y:m:d H:i:s",time()+21600);
 $account = $_SESSION['account'];
 $_POST['account'] = $_SESSION['account'];
-
+$address = $_POST[address];
 if ($_SESSION['account'] != null) {
     if (isset($_POST['button'])) {
         if ("$_POST[account]" != "$account")
@@ -18,7 +18,7 @@ if ($_SESSION['account'] != null) {
         else {
             $subject = htmlspecialchars($_POST[subject], ENT_NOQUOTES);
             $content = htmlspecialchars($_POST[content], ENT_NOQUOTES);
-            $sql = "insert into bbs (id,account,subject,content,time,address) value('','$account','$subject','$content','$time','$_POST[address]')";
+            $sql = "insert into bbs (id,account,subject,content,time,address) value('','$account','$subject','$content','$time','$address')";
             mysql_query($sql);
             echo "發布成功";
             echo '<meta http-equiv=REFRESH CONTENT=2;url=bbsmap.php>';
