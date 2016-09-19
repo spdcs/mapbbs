@@ -14,6 +14,15 @@ while ($record = mysql_fetch_array($result)) {
     //echo '<br>'.$id;
 
 }
-$json = json_encode($array);
-print_r($json);
+//$json = json_encode($array);
+//echo "$json";
+
+//Use urlencode to workaround for json_encode without JSON_UNESCAPED_UNICODE
+array_walk_recursive($array, function(&$value) {
+    if(is_string($value)) {
+        $value = urlencode($value);
+    }
+});
+$json = urldecode(json_encode($array));
+echo "$json";
 ?>
