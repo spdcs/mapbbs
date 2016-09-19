@@ -10,95 +10,23 @@ $row = mysql_fetch_row($result);
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
 <html>
 <head>
-    <title>留言</title>
+    <title>地圖留言版</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/bbs.css">
     <link rel="stylesheet" href="assets/css/reset.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <style type="text/css">
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-
-        /*#map { height: 800px; width: 1000px;}*/
-    </style>
-
     <?php
-    $sql = "select bbs.id, data.username, data.sex, bbs.subject, bbs.time, bbs.content, bbs.address from bbs LEFT JOIN data ON data.account=bbs.account order by bbs.id desc";
     $array = array();
     while ($record = mysql_fetch_array($result)) {
-
-        /* $id = $record['address'];
-         $account = $record['username'];
-         $array['address'][]=$id;
-         $array['username'][]=$account;*/
         $array[] = $record;
-        //echo '<br>'.$id;
-
     }
     $json = json_encode($array);
-    //print_r($json);
     ?>
 
-    <script src="http://maps.google.com/maps?file=api&v=3&key=AIzaSyBpJwO8jbJW5ZbVBaz_UxYLf2aAUurFR0w"
-            type="text/javascript"></script>
-    <script type="text/javascript">
-        function load() {
-            if (GBrowserIsCompatible()) {
-                var map = new GMap2(document.getElementById("map"));
-                var geocoder = new GClientGeocoder();
-                var address;
-                var username;
-                var time;
-                var subject;
-                var content;
-
-                <?php //for($i=0;$i < count($array);$i++){
-                //foreach ($array as $key){
-                ?>
-                $(document).ready(function () {
-                    var URLs = "a.php";
-                    $.ajax({
-                        url: URLs,
-                        type: "GET",
-                        dataType: 'json',
-                        success: function (json) {
-                            var NumOfjson = json.length;
-                            for (var i = 0; i < NumOfjson; i++) {
-                                username = json[i]["username"];
-                                time = json[i]["time"];
-                                subject = json[i]["subject"];
-                                content = json[i]["content"];
-                                address = json[i]["address"];//須修正
-
-                                //address = "<?php // echo $key['address'] ?>//";//須修正
-                                geocoder.getLatLng(address, function (point) {
-                                    if (!point) {
-                                        alert('Google Maps 找不到該地址，無法顯示地圖！'); //如果Google Maps無法顯示該地址的警示文字
-                                    } else {
-                                        map.setCenter(point, 13);
-                                        var marker = new GMarker(point);
-                                        map.addOverlay(marker);
-                                        marker.openInfoWindowHtml("留言者姓名:" + username + "<br>留言時間:" + time + "<br>留言主題:" + subject + "<br>留言內容:" + content + "<br>地址:" + address);//須修正
-                                    }
-                                });
-                            }
-                        },
-                        error: function () {
-                            alert("ERROR!!!");
-                        }
-                    });
-                });
-                <?php //} ?>
-            }
-        }
-    </script>
 </head>
 
-<body onload="load()" onunload="GUnload()">
+<body>
 <div class="top">
     <div class="menu">
         <a href="bbsmap.php">地圖留言板</a>
@@ -120,55 +48,58 @@ $row = mysql_fetch_row($result);
         }
         ?>
     </div>
-    <div class="comeback pull-right" id="_top">
-        <a href="">top</a>
-    </div>
 </div>
 <center>
+    <script type="text/javascript">
+        function initMap() {
+            var URLs = "a.php";
+            var geocoder = new google.maps.Geocoder();
+            var latlng = new google.maps.LatLng(22.999900, 120.226876);
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: latlng,
+                zoom: 14
+            });
+            $.ajax({
+                url: URLs,
+                type: "GET",
+                dataType: 'json',
+                success: function (json) {
+                    var NumOfjson = json.length;
+                    for (var i = 0; i < NumOfjson; i++) {
+                        var username = json[i].username;
+                        var time = json[i].time;
+                        var subject = json[i].subject;
+                        var content = json[i].content;
+                        var address = json[i].address;
+                        var infocontent = '留言者姓名：' + username + '<br>留言時間：' + time + '<br>留言主題：' + subject + '<br>留言內容：' + content + '<br>地址：' + address;
+                        var lat = parseFloat(json[i].lat);
+                        var lng = parseFloat(json[i].lng);
+                        var myLatLng = {lat: lat, lng: lng};
+                        console.log(myLatLng);
+                        var marker = new google.maps.Marker({
+                            map: map,
+                            position: myLatLng,
+                            icon: 'http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_red.png'
+                        });
+                        var infowindow = new google.maps.InfoWindow({
+                            content: infocontent
+                        });
+                        google.maps.event.addListener(marker, 'click', (function (marker, infocontent, infowindow) {
+                            return function () {
+                                infowindow.setContent(infocontent);
+                                infowindow.open(map, marker);
+                            };
+                        })(marker, infocontent, infowindow));
+
+                    }
+                }
+            });
+        }
+
+    </script>
     <div id="map" style="width: 600px; height: 500px"></div> <!--此為地圖顯示大小-->
-    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js'></script>
-    <script type='text/javascript'>
-        $(function () {
-            $(window).load(function () {
-                $(window).bind('scroll resize', function () {
-                    var $this = $(this);
-                    var $this_Top = $this.scrollTop();
-
-                    //當高度小於100時，關閉區塊
-                    if ($this_Top < 100) {
-                        $(".top").removeClass("test");
-                    }
-                    if ($this_Top > 100) {
-                        $(".top").addClass("test");
-                    }
-                }).scroll();
-            });
-        });
-    </script>
-    <script type="text/javascript">
-        //點擊top跑回頂端
-        $(document).ready(function () {
-            $('#_top').click(function () {
-                $('html,body').animate({scrollTop: 0}, 'slow');
-            });
-        });
-    </script>
-    <script type="text/javascript">
-        //隱藏top
-        $(document).ready(function () {
-            $("#_top").hide()
-            $(function () {
-                $(window).scroll(function () {
-                    if ($(this).scrollTop() > 1) {//當window的scrolltop距離>1，top淡出，反之淡入
-                        $("#_top").fadeIn();
-                    } else {
-                        $("#_top").fadeOut();
-                    }
-                });
-            });
-
-
-        });
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8hRHdZEOVwpfzjh_Yo5Pu0Aw_RrsOsT8&callback=initMap">
     </script>
 </body>
 </html>
