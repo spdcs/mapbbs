@@ -97,7 +97,7 @@ $row = mysql_fetch_row($result);
         }
 
     </script>
-    <div id="map" style="width: 600px; height: 500px"></div> <!--此為地圖顯示大小-->
+    <div id="map" style="width: 800px; height: 600px"></div> <!--此為地圖顯示大小-->
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8hRHdZEOVwpfzjh_Yo5Pu0Aw_RrsOsT8&callback=initMap">
     </script>
