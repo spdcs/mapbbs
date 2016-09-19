@@ -6,6 +6,7 @@ $sql = "select username from data";
 $result = mysql_query($sql);
 $row = mysql_fetch_row($result);
 $time = date("Y:m:d H:i:s",time()+21600);
+$time = date("Y:m:d H:i:s", time() + 21600);
 $account = $_SESSION['account'];
 $_POST['account'] = $_SESSION['account'];
 $address = $_POST[address];
@@ -56,12 +57,12 @@ else
         <a href="index.php">留言板</a>
         <a href="bbs_add.php">填寫留言</a>
         <?php
-        if($_SESSION['account'] == ""){
+        if ($_SESSION['account'] == "") {
             echo "<a class=\" letter2\"         <a href=\"login.php\">會員登入</a>";
         }
-        if($_SESSION['account'] != ""){
+        if ($_SESSION['account'] != "") {
             echo "<a class=\" letter2\" <a href=\"logout.php\">會員登出</a>";
-        }?>
+        } ?>
 
         <a href="member.php">會員資料</a>
 
@@ -71,9 +72,7 @@ else
 
         if ($_SESSION['account'] != null) {
             echo $username . " 你好";
-        }
-        else
-        {
+        } else {
             echo "";
         }
         ?>
@@ -87,7 +86,7 @@ else
         <div class="form-group">
             <label for="account" class="col-sm-4 control-label"></label>
             <div class="col-sm-6">
-                <input type="hidden" class="form-control" name="account" id="account" />
+                <input type="hidden" class="form-control" name="account" id="account"/>
             </div>
         </div>
         <div class="form-group">
@@ -109,10 +108,17 @@ else
             </div>
         </div>
         <div class="col-sm-6">
+<<<<<<< HEAD
         <input type="hidden" name="lat" class="form-control">
         </div>
         <div class="col-sm-6">
         <input type="hidden" name="lng" class="form-control">
+=======
+        <input type="hidden" name="lat">
+        </div>
+        <div class="col-sm-6">
+        <input type="hidden" name="lng">
+>>>>>>> git
         </div>
         <div class="button">
             <input type="submit" name="button" id="button" value="送出" class="btn"/>
@@ -120,11 +126,19 @@ else
     </form>
 
     <script type="text/javascript">
+<<<<<<< HEAD
         $(document).ready(function() {
             var geocoder = new google.maps.Geocoder();
             $("input[name=address]").blur(function(){
                 address = $("input[name=address]").val();
                 if(address){
+=======
+        $(document).ready(function () {
+            var geocoder = new google.maps.Geocoder();
+            $("input[name=address]").blur(function () {
+                address = $("input[name=address]").val();
+                if (address) {
+>>>>>>> git
                     geocoder.geocode({'address': address}, function (results, status) {
                         if (status == google.maps.GeocoderStatus.OK) {
                             $("input[name=lat]").val(results[0].geometry.location.lat());
@@ -136,22 +150,36 @@ else
             });
         });
 
+<<<<<<< HEAD
         function checkInput(form){
             //驗證標題是否為空
             if(form.subject.value == ''){
+=======
+        function checkInput(form) {
+            //驗證標題是否為空
+            if (form.subject.value == '') {
+>>>>>>> git
                 alert('標題不能為空');
                 form.subject.focus();
                 return false;
             }
 
             //驗證輸入内容是否為空
+<<<<<<< HEAD
             if(form.content.value == ''){
+=======
+            if (form.content.value == '') {
+>>>>>>> git
                 alert('請說點什麼');
                 form.content.focus();
                 return false;
             }
             //驗證地址是否為空
+<<<<<<< HEAD
             if(form.address.value == ''){
+=======
+            if (form.address.value == '') {
+>>>>>>> git
                 alert('請輸入地址');
                 form.address.focus();
                 return false;
