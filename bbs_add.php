@@ -6,6 +6,7 @@ $sql = "select username from data";
 $result = mysql_query($sql);
 $row = mysql_fetch_row($result);
 $time = date("Y:m:d H:i:s",time()+21600);
+$time = date("Y:m:d H:i:s", time() + 21600);
 $account = $_SESSION['account'];
 $_POST['account'] = $_SESSION['account'];
 $address = $_POST[address];
@@ -42,20 +43,24 @@ else
     <link rel="stylesheet" href="assets/css/global.css">
     <link rel="stylesheet" href="assets/css/bbs.css">
     <link rel="stylesheet" href="assets/css/reset.css">
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
+    <script src="http://maps.google.com/maps?file=api&v=3&key=AIzaSyBpJwO8jbJW5ZbVBaz_UxYLf2aAUurFR0w"
+            type="text/javascript"></script>
 </head>
 <body>
+
 <div class="top">
     <div class="menu">
         <a href="bbsmap.php">地圖留言板</a>
         <a href="index.php">留言板</a>
         <a href="bbs_add.php">填寫留言</a>
         <?php
-        if($_SESSION['account'] == ""){
+        if ($_SESSION['account'] == "") {
             echo "<a class=\" letter2\"         <a href=\"login.php\">會員登入</a>";
         }
-        if($_SESSION['account'] != ""){
+        if ($_SESSION['account'] != "") {
             echo "<a class=\" letter2\" <a href=\"logout.php\">會員登出</a>";
-        }?>
+        } ?>
 
         <a href="member.php">會員資料</a>
 
@@ -65,9 +70,7 @@ else
 
         if ($_SESSION['account'] != null) {
             echo $username . " 你好";
-        }
-        else
-        {
+        } else {
             echo "";
         }
         ?>
@@ -81,56 +84,78 @@ else
         <div class="form-group">
             <label for="account" class="col-sm-4 control-label"></label>
             <div class="col-sm-6">
-                <input type="hidden" class="form-control" name="account" id="account" />
+                <input type="hidden" class="form-control" name="account" id="account"/>
             </div>
         </div>
-<div class="form-group">
-    <label for="subject" class="col-sm-4 control-label">留言主旨：</label>
-    <div class="col-sm-6">
-        <input type="text" class="form-control" name="subject" id="subject"/>
-    </div>
-</div>
-<div class="form-group">
-    <label for="address" class="col-sm-4 control-label">所在地址：</label>
-    <div class="col-sm-6">
-        <input type="text" class="form-control" name="address" id="address"/>
-    </div>
-</div>
-<div class="form-group">
-    <label for="content" class="col-sm-4 control-label">留言內容：</label>
-    <div class="col-sm-6">
-        <textarea class="form-control" name="content" id="content" rows="5"></textarea>
-    </div>
-</div>
-<div class="button">
-    <input type="submit" name="button" id="button" value="送出" class="btn"/>
-</div>
-</form>
+        <div class="form-group">
+            <label for="subject" class="col-sm-4 control-label">留言主旨：</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" name="subject" id="subject"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="address" class="col-sm-4 control-label">所在地址：</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" name="address" id="address"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="content" class="col-sm-4 control-label">留言內容：</label>
+            <div class="col-sm-6">
+                <textarea class="form-control" name="content" id="content" rows="5"></textarea>
+            </div>
+        </div>
+        <div class="col-sm-6">
+        <input type="hidden" name="lat">
+        </div>
+        <div class="col-sm-6">
+        <input type="hidden" name="lng">
+        </div>
+        <div class="button">
+            <input type="submit" name="button" id="button" value="送出" class="btn"/>
+        </div>
+    </form>
 
-<script type="text/javascript">
-    function checkInput(form){
-        //驗證標題是否為空
-        if(form.subject.value == ''){
-            alert('標題不能為空');
-            form.subject.focus();
-            return false;
-        }
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var geocoder = new google.maps.Geocoder();
+            $("input[name=address]").blur(function () {
+                address = $("input[name=address]").val();
+                if (address) {
+                    geocoder.geocode({'address': address}, function (results, status) {
+                        if (status == google.maps.GeocoderStatus.OK) {
+                            $("input[name=lat]").val(results[0].geometry.location.lat());
+                            $("input[name=lng]").val(results[0].geometry.location.lng());
+                        }
+                    })
+                }
 
-        //驗證輸入内容是否為空
-        if(form.content.value == ''){
-            alert('請說點什麼');
-            form.content.focus();
-            return false;
-        }
-        //驗證地址是否為空
-        if(form.address.value == ''){
-            alert('請輸入地址');
-            form.address.focus();
-            return false;
-        }
+            });
+        });
 
-        return true;
-    }
-</script>
+        function checkInput(form) {
+            //驗證標題是否為空
+            if (form.subject.value == '') {
+                alert('標題不能為空');
+                form.subject.focus();
+                return false;
+            }
+
+            //驗證輸入内容是否為空
+            if (form.content.value == '') {
+                alert('請說點什麼');
+                form.content.focus();
+                return false;
+            }
+            //驗證地址是否為空
+            if (form.address.value == '') {
+                alert('請輸入地址');
+                form.address.focus();
+                return false;
+            }
+
+            return true;
+        }
+    </script>
 </body>
 </html>
