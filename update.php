@@ -50,28 +50,28 @@ if ($_SESSION['account'] != null) {
         <div>
             <form action="update_finish.php" method="post" class="form-horizontal" role="form">
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">帳號</label>
-                    <div class="col-sm-10">
+                    <label class="col-sm-5 control-label">帳號</label>
+                    <div class="col-sm-7">
                         <p class="form-control-static"><?= $account ?></p>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-2 control-label">密碼</label>
+                    <label for="inputEmail3" class="col-sm-5 control-label">密碼</label>
                     <div class="col-sm-3">
                         <input type="password" class="form-control" id="inputEmail3" size="18" name="password"
                                value=<?= $row[2] ?>>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-2 control-label">再次輸入密碼</label>
+                    <label for="inputEmail3" class="col-sm-5 control-label">再次輸入密碼</label>
                     <div class="col-sm-3">
                         <input type="password" class="form-control" id="inputEmail3" size="18" name="password2"
                                value=<?= $row[2] ?>>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-2 control-label">用戶名</label>
+                    <label for="inputEmail3" class="col-sm-5 control-label">用戶名</label>
                     <div class="col-sm-3">
                         <input type="text" class="form-control" id="inputEmail3" size="18" name="username"
                                value=<?= $row[3] ?>>
@@ -79,12 +79,12 @@ if ($_SESSION['account'] != null) {
                 </div>
 <div>
     <div class="form-group">
-        <label for="inputEmail3" class="col-sm-2 control-label">生日</label>
+        <label for="inputEmail3" class="col-sm-5 control-label">生日</label>
         <div class="col-sm-2">
             </div>
         </div>
                 <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-3 control-label">年</label>
+                    <label for="inputEmail3" class="col-sm-5 control-label">年</label>
                     <div class="col-sm-2">
 
                         <select class="form-control" name="birth" value="$row[5]">
@@ -105,7 +105,7 @@ if ($_SESSION['account'] != null) {
 
 
                 <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-3 control-label">月</label>
+                    <label for="inputEmail3" class="col-sm-5 control-label">月</label>
                     <div class="col-sm-2">
                         <select class="form-control" name="mon" value="$row[6]">
                             <?php
@@ -125,7 +125,7 @@ if ($_SESSION['account'] != null) {
 
 
                 <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-3 control-label">日</label>
+                    <label for="inputEmail3" class="col-sm-5 control-label">日</label>
                     <div class="col-sm-2">
                         <select class="form-control" name="dayday" value="$row[7]">
                             <?php
@@ -147,7 +147,7 @@ if ($_SESSION['account'] != null) {
 
 
                 <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-2 control-label">信箱</label>
+                    <label for="inputEmail3" class="col-sm-5 control-label">信箱</label>
                     <div class="col-sm-5">
                         <input type="text" class="form-control" id="inputEmail3" size="18" name="email"
                                value=<?= $row[8] ?>>
