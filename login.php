@@ -14,6 +14,21 @@ $row = mysql_fetch_row($result);
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/bbs.css">
     <link rel="stylesheet" href="assets/css/global.css">
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("button").click(function() {
+                if(confirm($("input:text").val()))
+                {
+
+                }
+                else
+                {
+                    return false
+                }
+            });
+        });
+        </script>
 </head>
 <body>
 <div class="top">
@@ -41,13 +56,13 @@ $row = mysql_fetch_row($result);
         <form action="login_connect.php" method="post" name="login" class="form-horizontal" role="form" >
             <div class="form-group">
                 <label for="inputEmail3" class="col-sm-2 control-label">帳號</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" name="account" id="inputEmail3" placeholder="輸入帳號">
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" name="account" id="inputEmail3" placeholder="輸入帳號" >
                 </div>
             </div>
             <div class="form-group">
                     <label for="inputEmail3" class="col-sm-2 control-label">密碼</label>
-                <div class="col-sm-10">
+                <div class="col-sm-8">
                         <input type="password" class="form-control"name="password" id="inputEmail3" placeholder="輸入密碼">
                 </div>
             </div>

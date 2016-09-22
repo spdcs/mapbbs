@@ -130,6 +130,7 @@ else
                             $("input[name=lat]").val(results[0].geometry.location.lat());
                             $("input[name=lng]").val(results[0].geometry.location.lng());
                         }
+                        else {alert("地址格式錯誤");}
                     })
                 }
 
