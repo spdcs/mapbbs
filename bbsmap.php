@@ -75,7 +75,6 @@ $row = mysql_fetch_row($result);
                         var lat = parseFloat(json[i].lat);
                         var lng = parseFloat(json[i].lng);
                         var myLatLng = {lat: lat, lng: lng};
-                        console.log(myLatLng);
                         var marker = new google.maps.Marker({
                             map: map,
                             position: myLatLng,
