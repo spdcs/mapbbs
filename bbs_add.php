@@ -81,7 +81,7 @@ else
 </div>
 <div class="container">
     <div class="top-word">
-        <h3>新增留言</h3>
+        <h3>發布留言</h3>
     </div>
     <form id="form1" name="form1" method="post" onsubmit="return checkInput(this);" class="form-horizontal">
         <div class="form-group">
