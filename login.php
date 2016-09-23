@@ -48,6 +48,8 @@ $row = mysql_fetch_row($result);
         ?>
     </div>
 </div>
+<div  style= "background-image:url(assets/img/login.jpg)">
+
 <div class="container">
     <div>
         <h3>會員登入</h3>
@@ -73,6 +75,7 @@ $row = mysql_fetch_row($result);
         </form>
     </div>
 </div>
+    </div>
 
 </body>
 </html>
