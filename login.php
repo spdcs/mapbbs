@@ -50,7 +50,8 @@ $row = mysql_fetch_row($result);
     </div>
 </div>
 
-<div style="background-image:url('http://www.serengeseba.com/thumb/0/01e946b4da2b1b5bd0.jpg');">
+
+
         <div class="container">
             <div>
                 <h3>會員登入</h3>

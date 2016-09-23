@@ -23,7 +23,7 @@ if (isset($_POST['submit'])){
     }
 }-->
 
-<body>
+<body style="background-image:url('http://www.serengeseba.com/thumb/0/01e946b4da2b1b5bd0.jpg');">
 
 <div class="top">
     <div class="menu">
@@ -32,6 +32,7 @@ if (isset($_POST['submit'])){
         <a href="login.php">會員登入</a>
     </div>
 </div>
+
 <div class="container-fluid">
     <div class="container">
 <h2 class="register1">註冊會員</h2>
@@ -78,6 +79,7 @@ if (isset($_POST['submit'])){
 </div>
     </div>
 </div>
+
 
 </body>
 </html>
