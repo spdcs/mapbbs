@@ -28,7 +28,7 @@ $row = mysql_fetch_row($result);
                 }
             });
         });
-        </script>
+    </script>
 </head>
 <body style="background-image:url('http://www.serengeseba.com/thumb/0/01e946b4da2b1b5bd0.jpg');">
 
@@ -49,32 +49,34 @@ $row = mysql_fetch_row($result);
         ?>
     </div>
 </div>
-<div style="background-image:url('http://www.serengeseba.com/thumb/0/01e946b4da2b1b5bd0.jpg');">
-<div class="container">
-    <div>
-        <h3>會員登入</h3>
-    </div>
-    <div>
-        <form action="login_connect.php" method="post" name="login" class="form-horizontal" role="form" >
-            <div class="form-group">
-                <label for="inputEmail3" class="col-sm-2 control-label">帳號</label>
-                <div class="col-sm-8">
-                    <input type="text" class="form-control" name="account" id="inputEmail3" placeholder="輸入帳號" >
-                </div>
-            </div>
-            <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-2 control-label">密碼</label>
-                <div class="col-sm-8">
-                        <input type="password" class="form-control"name="password" id="inputEmail3" placeholder="輸入密碼">
-                </div>
-            </div>
 
-       <div class="login5">
-            <button type="submit" class="btn btn-default">登入</button>
-       </div>
-        </form>
+<div style="background-image:url('http://www.serengeseba.com/thumb/0/01e946b4da2b1b5bd0.jpg');">
+        <div class="container">
+            <div>
+                <h3>會員登入</h3>
+            </div>
+            <div>
+                <form action="login_connect.php" method="post" name="login" class="form-horizontal" role="form" >
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">帳號</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" name="account" id="inputEmail3" placeholder="輸入帳號" >
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">密碼</label>
+                        <div class="col-sm-8">
+                            <input type="password" class="form-control"name="password" id="inputEmail3" placeholder="輸入密碼">
+                        </div>
+                    </div>
+
+                    <div class="login5">
+                        <button type="submit" class="btn btn-default">登入</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-</div>
 
 </div>
 </body>
