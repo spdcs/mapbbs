@@ -48,7 +48,7 @@ else
     <script src="http://maps.google.com/maps?file=api&v=3&key=AIzaSyBpJwO8jbJW5ZbVBaz_UxYLf2aAUurFR0w"
             type="text/javascript"></script>
 </head>
-<body>
+<body style="background-image:url('http://www.serengeseba.com/thumb/0/01e946b4da2b1b5bd0.jpg');">
 
 <div class="top">
     <div class="menu">
