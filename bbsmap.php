@@ -26,7 +26,7 @@ $row = mysql_fetch_row($result);
 
 </head>
 
-<body>
+<body style="background-image:url('http://www.serengeseba.com/thumb/0/01e946b4da2b1b5bd0.jpg');">
 <div class="top">
     <div class="menu">
         <a href="bbsmap.php">地圖留言板</a>
