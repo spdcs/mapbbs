@@ -54,10 +54,10 @@ $row = mysql_fetch_row($result);
         function initMap() {
             var URLs = "a.php";
             var geocoder = new google.maps.Geocoder();
-            var latlng = new google.maps.LatLng(22.999900, 120.226876);
+            var latlng = new google.maps.LatLng(23.795201261829853, 120.9694504737854);
             var map = new google.maps.Map(document.getElementById('map'), {
                 center: latlng,
-                zoom: 14
+                zoom: 8
             });
             $.ajax({
                 url: URLs,
