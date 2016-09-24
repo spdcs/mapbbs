@@ -26,7 +26,7 @@ $row = mysql_fetch_row($result);
 
 </head>
 
-<body style="background-image:url('http://www.serengeseba.com/thumb/0/01e946b4da2b1b5bd0.jpg');">
+<body>
 <div class="top">
     <div class="menu">
         <a href="bbsmap.php">地圖留言板</a>
@@ -78,7 +78,7 @@ $row = mysql_fetch_row($result);
                         var marker = new google.maps.Marker({
                             map: map,
                             position: myLatLng,
-                            icon: 'http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_red.png'
+                            icon: 'assets/img/box.png'
                         });
                         var infowindow = new google.maps.InfoWindow({
                             content: infocontent
