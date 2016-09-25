@@ -1,8 +1,11 @@
 html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    background:rgba(51, 122, 183, 0.21);
+
+ height: 100%; margin:auto; padding: 0;
+    background-image: url('http://uploadfile.huiyi8.com/2014/0517/20140517032400249.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
 }
 
 .top {

@@ -23,19 +23,22 @@ if (isset($_POST['submit'])){
     }
 }-->
 
-<body style="background-image:url('http://www.serengeseba.com/thumb/0/01e946b4da2b1b5bd0.jpg');">
+<body style="background-image:url('http://www.zw234.cn/pic.asp?url=http://www.98ps.com/uploads/allimg/c130505/13CHTQ310-59645.jpg');">
 
 <div class="top">
     <div class="menu">
-        <a href="bbsmap.php">地圖留言板</a>
-        <a href="index.php">留言板</a>
+        <a href="bbsmap.php">愛心地圖</a>
+        <a href="index.php">事件</a>
         <a href="login.php">會員登入</a>
     </div>
+</div>
+<div>
+    <h3 class="login10">歡迎加入</h3>
 </div>
 
 <div class="container-fluid">
     <div class="container">
-<h2 class="register1">註冊會員</h2>
+
     <div class="container1">
         <form action="register_connect.php" method="post" >
             <table class="table">

@@ -15,6 +15,7 @@ $row = mysql_fetch_row($result);
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/bbs.css">
     <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/global.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <?php
     $array = array();
@@ -25,12 +26,11 @@ $row = mysql_fetch_row($result);
     ?>
 
 </head>
-
-<body>
+<body style="background-image:url('http://m.ppt123.net/beijing/UploadFiles_8374/201202/2012022812393297.jpg');">
 <div class="top">
     <div class="menu">
-        <a href="bbsmap.php">地圖留言板</a>
-        <a href="index.php">留言板</a>
+        <a href="bbsmap.php">愛心地圖</a>
+        <a href="index.php">事件</a>
         <?php
         if ($_SESSION['account'] == "") {
             echo "<a class=\" letter2\"   <a href=\"login.php\">會員登入</a>";
