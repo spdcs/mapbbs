@@ -71,7 +71,8 @@ $row = mysql_fetch_row($result);
                         var subject = json[i].subject;
                         var content = json[i].content;
                         var address = json[i].address;
-                        var infocontent = '留言者姓名：' + username + '<br>留言時間：' + time + '<br>留言主題：' + subject + '<br>留言內容：' + content + '<br>地址：' + address;
+                        var infocontent = "<div id='content'>"+
+                            '<div>留言者姓名：' + username + '</div><div>留言時間：' + time + '</div><div>留言主題：' + subject + '</div><div>留言內容：' + content + '</div><div>地址：' + address+"</div>";
                         var lat = parseFloat(json[i].lat);
                         var lng = parseFloat(json[i].lng);
                         var myLatLng = {lat: lat, lng: lng};
@@ -81,7 +82,8 @@ $row = mysql_fetch_row($result);
                             icon: 'assets/img/box.png'
                         });
                         var infowindow = new google.maps.InfoWindow({
-                            content: infocontent
+                            content: infocontent,
+                            maxWidth: 300
                         });
                         google.maps.event.addListener(marker, 'click', (function (marker, infocontent, infowindow) {
                             return function () {
