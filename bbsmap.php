@@ -26,11 +26,10 @@ $row = mysql_fetch_row($result);
     ?>
 
 </head>
-<body style="background-image:url('http://m.ppt123.net/beijing/UploadFiles_8374/201202/2012022812393297.jpg');">
+<body style="background-image:url('assets/img/10-Flamingo.png');">
 <div class="top">
     <div class="menu">
-        <a href="bbsmap.php">愛心地圖</a>
-        <a href="index.php">事件</a>
+        <a href="index.php">愛心資訊</a>
         <?php
         if ($_SESSION['account'] == "") {
             echo "<a class=\" letter2\"   <a href=\"login.php\">會員登入</a>";

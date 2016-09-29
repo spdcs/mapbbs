@@ -23,12 +23,12 @@ if (isset($_POST['submit'])){
     }
 }-->
 
-<body style="background-image:url('http://www.zw234.cn/pic.asp?url=http://www.98ps.com/uploads/allimg/c130505/13CHTQ310-59645.jpg');">
+<body style="background-image:url('assets/img/10-Flamingo.png');">
 
 <div class="top">
     <div class="menu">
         <a href="bbsmap.php">愛心地圖</a>
-        <a href="index.php">事件</a>
+        <a href="index.php">愛心資訊</a>
         <a href="login.php">會員登入</a>
     </div>
 </div>

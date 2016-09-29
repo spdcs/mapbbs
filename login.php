@@ -30,11 +30,11 @@ $row = mysql_fetch_row($result);
         });
     </script>
 </head>
-<body style="background-image:url('http://uploadfile.huiyi8.com/2014/0517/20140517032400249.jpg');">
+<body style="background-image:url('assets/img/10-Flamingo.png');">
 <div class="top">
     <div class="menu">
         <a href="bbsmap.php">愛心地圖</a>
-        <a href="index.php">事件</a>
+        <a href="index.php">愛心資訊</a>
         <a href="register.php">註冊會員</a>
     </div>
     <div class="hello-name">
@@ -50,14 +50,13 @@ $row = mysql_fetch_row($result);
 </div>
 
 <div >
-    <h2 class="login10">歡迎到愛心地圖</h2>
-    <h3>-讓我們一起讓世界更美好</h3>
+    <center>
+    <h2 class="login10">會員登入</h2>
+    </center>
 </div>
-
 
         <div class="container2">
             <div>
-                <h3>愛心會員登入</h3>
             </div>
             <div>
                 <form action="login_connect.php" method="post" name="login" class="form-horizontal" role="form" >
