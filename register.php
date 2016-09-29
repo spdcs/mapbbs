@@ -30,6 +30,7 @@ if (isset($_POST['submit'])){
         <a href="bbsmap.php">愛心地圖</a>
         <a href="index.php">愛心資訊</a>
         <a href="login.php">會員登入</a>
+        <a href="register.php">會員註冊</a>
     </div>
 </div>
 <div>

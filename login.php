@@ -35,6 +35,7 @@ $row = mysql_fetch_row($result);
     <div class="menu">
         <a href="bbsmap.php">愛心地圖</a>
         <a href="index.php">愛心資訊</a>
+        <a href="login.php">會員登入</a>
         <a href="register.php">註冊會員</a>
     </div>
     <div class="hello-name">

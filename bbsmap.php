@@ -29,6 +29,7 @@ $row = mysql_fetch_row($result);
 <body style="background-image:url('assets/img/10-Flamingo.png');">
 <div class="top">
     <div class="menu">
+        <a href="bbsmap.php">愛心地圖</a>
         <a href="index.php">愛心資訊</a>
         <?php
         if ($_SESSION['account'] == "") {

@@ -54,6 +54,7 @@ else
     <div class="menu">
         <a href="bbsmap.php">愛心地圖</a>
         <a href="index.php">愛心資訊</a>
+        <a href="bbs_add.php">發布訊息</a>
         <?php
         if($_SESSION['account'] == ""){
             echo "<a class=\" letter2\"         <a href=\"login.php\">會員登入</a>";
